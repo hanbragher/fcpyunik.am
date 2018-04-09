@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test', ['as'=>'test', 'uses'=>'TestController@test']);

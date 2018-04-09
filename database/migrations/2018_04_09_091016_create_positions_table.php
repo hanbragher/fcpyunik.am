@@ -15,7 +15,9 @@ class CreatePositionsTable extends Migration
     {
         Schema::create('positions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('position');
+            $table->string('hy_position');
+            $table->string('ru_position');
+            $table->string('en_position');
         });
     }
 
