@@ -16,7 +16,26 @@ class TestController extends Controller
     public function test(){
 
         //stanal voreve nationality
-        echo Nationalities::find(1)->hy_nationality.'<br>';;
+        echo Nationalities::find(1)->hy_nationality.'<br>';
+
+        //vor seasozy inch xaxacoxner uni
+        $season_player = Seasons::find(1)->players;
+        foreach($season_player as $spl){
+            dump($spl->hy_name);
+        }
+
+        //vor statusy inch playerner uni
+        $status_player = Statuses::find(1)->players->get();
+        foreach($status_player as $stpl){
+            dump($stpl->hy_name);
+        }
+
+
+        //vor teamy inch playerner uni
+        $team_player = Teams::find(1)->players->get();
+        foreach($team_player as $tpl){
+            dump($tpl->hy_name);
+        }
 
 
 //////////
@@ -29,6 +48,13 @@ class TestController extends Controller
             dump($pln->hy_nationality);
             //dump($pln->ru_nationality);
             //dump($pln->en_nationality);
+        }
+
+        //vor playery inch season uni
+        $player_season = Players::find(1)->seasons;
+        foreach($player_season as $pls){
+            dump($pls->season);
+
         }
 
         //erb acnvel xaxacoxy
@@ -73,22 +99,17 @@ class TestController extends Controller
 
 //////////
 
+        //stanal voreve position
+        echo Positions::find(1)->ru_position.'<br>';
 
-
-        //stanal vorteve position
-        echo Positions::find(1)->ru_position;
-
-        //stanal vorteve season
-        echo Seasons::find(1)->season;
+        //stanal voreve season
+        echo Seasons::find(1)->season.'<br>';
 
         //stanal voreve status
-        echo Statuses::find(1)->hy_status;
+        echo Statuses::find(1)->hy_status.'<br>';
 
         //stanal voreve team
-        echo Teams::find(1)->ru_team;
-
-
-
+        echo Teams::find(1)->ru_team.'<br>';
 
     }
 }

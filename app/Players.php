@@ -29,4 +29,8 @@ class Players extends Model
     public function nationalities(){
         return $this->belongsToMany('App\Nationalities', 'player_nationality', 'player_id', 'nationality_id');
     }
+
+    public function seasons(){
+        return $this->belongsToMany('App\Seasons', 'player_season', 'player_id', 'season_id');
+    }
 }

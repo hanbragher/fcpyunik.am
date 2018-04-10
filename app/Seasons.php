@@ -10,4 +10,8 @@ class Seasons extends Model
     protected $primaryKey = 'id';
     protected $fillable = ['season'];
     public $timestamps = false;
+
+    public function players(){
+        return $this->belongsToMany('App\Players', 'player_season', 'season_id', 'player_id');
+    }
 }

@@ -10,4 +10,8 @@ class Statuses extends Model
     protected $primaryKey = 'id';
     protected $fillable = ['hy_status', 'ru_status', 'en_status'];
     public $timestamps = false;
+
+    public function players(){
+        return $this->belongsTo('App\Players', 'id', 'status_id');
+    }
 }
