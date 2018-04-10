@@ -11,8 +11,19 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
+});*/
+
+//Route::get('/test', ['as'=>'test', 'uses'=>'TestController@test']);
+
+/*Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');*/
+
+Route::group(['prefix'=>'{location?}'], function (){
+
+    Route::get('/', ['as'=>'test', 'uses'=>'TestController@test']);
+
 });
 
-Route::get('/test', ['as'=>'test', 'uses'=>'TestController@test']);

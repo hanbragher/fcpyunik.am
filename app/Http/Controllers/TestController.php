@@ -10,10 +10,13 @@ use App\Seasons;
 use App\Statuses;
 use App\Teams;
 use App\Persons;
+use App;
 
 class TestController extends Controller
 {
     public function test(){
+
+        dump(App::getLocale());
 
         //stanal voreve nationality
         echo Nationalities::find(1)->hy_nationality.'<br>';
@@ -27,16 +30,14 @@ class TestController extends Controller
         //vor statusy inch playerner uni
         $status_player = Statuses::find(1)->players->get();
         foreach($status_player as $stpl){
-            dump($stpl->hy_name);
+            dump($stpl->ru_name);
         }
-
 
         //vor teamy inch playerner uni
         $team_player = Teams::find(1)->players->get();
         foreach($team_player as $tpl){
-            dump($tpl->hy_name);
+            dump($tpl->en_name);
         }
-
 
 //////////
         //stanal xaxacoxic informacia
@@ -46,15 +47,12 @@ class TestController extends Controller
         $player_nationality = Players::find(1)->nationalities;
         foreach($player_nationality as $pln){
             dump($pln->hy_nationality);
-            //dump($pln->ru_nationality);
-            //dump($pln->en_nationality);
         }
 
         //vor playery inch season uni
         $player_season = Players::find(1)->seasons;
         foreach($player_season as $pls){
             dump($pls->season);
-
         }
 
         //erb acnvel xaxacoxy
@@ -81,15 +79,14 @@ class TestController extends Controller
         $person_nationality = Persons::find(1)->nationalities;
         foreach($person_nationality as $pn){
             dump($pn->hy_nationality);
-            //dump($pn->ru_nationality);
-            //dump($pn->en_nationality);
         }
 
         //personi cnndyan tivy
         echo Persons::find(1)->birthday.'<br>';
 
         //qani tarekana persony
-        echo \Carbon\Carbon::parse(Persons::find(1)->birthday)->diffInYears(date_create('now')).'<br>';;//diffForHumans(date_create('now'));
+        echo \Carbon\Carbon::parse(Persons::find(1)->birthday)->diffInYears(date_create('now')).'<br>';
+        //diffForHumans(date_create('now'));
 
         //persony inch timica
         echo Persons::find(1)->teams->hy_team.'<br>';;
