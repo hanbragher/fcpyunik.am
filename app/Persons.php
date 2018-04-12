@@ -21,7 +21,7 @@ class Persons extends Model
         return $this->hasOne('App\Positions', 'id', 'position_id');
     }
 
-    public function nationalities(){
-        return $this->belongsToMany('App\Nationalities', 'person_nationality', 'person_id', 'nationality_id');
+    public function nationality(){
+        return $this->belongsToMany('App\Nationality', 'person_nationality', 'person_id', 'nationality_id');
     }
 }

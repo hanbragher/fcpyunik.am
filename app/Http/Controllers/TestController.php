@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Nationalities;
-use App\Players;
+use App\Nationality;
+use App\Player;
 use App\Positions;
 use App\Seasons;
 use App\Statuses;
 use App\Teams;
 use App\Persons;
 use App;
-use App\Categories;
+use App\Category;
 use App\Formats;
-use App\Items;
+use App\Item;
 
 class TestController extends Controller
 {
@@ -22,56 +22,56 @@ class TestController extends Controller
         dump(App::getLocale());
 
         //stanal voreve nationality
-        echo Nationalities::find(1)->hy_nationality.'<br>';
+        echo Nationality::find(1)->hy_nationality.'<br>';
 
         //vor seasozy inch xaxacoxner uni
-        $season_player = Seasons::find(1)->players;
+        $season_player = Seasons::find(1)->player;
         foreach($season_player as $spl){
             dump($spl->hy_name);
         }
-
         //vor statusy inch playerner uni
-        $status_player = Statuses::find(1)->players->get();
+        $status_player = Statuses::find(1)->player->get();
         foreach($status_player as $stpl){
             dump($stpl->ru_name);
         }
 
         //vor teamy inch playerner uni
-        $team_player = Teams::find(1)->players->get();
+        $team_player = Teams::find(1)->player->get();
         foreach($team_player as $tpl){
             dump($tpl->en_name);
         }
 
+
 //////////
         //stanal xaxacoxic informacia
-        echo Players::find(1)->hy_name.'<br>';
+        echo Player::find(1)->hy_name.'<br>';
+
 
         //vor playery inch nationality uni
-        $player_nationality = Players::find(1)->nationalities;
+        $player_nationality = Player::find(1)->nationality;
         foreach($player_nationality as $pln){
             dump($pln->hy_nationality);
         }
 
         //vor playery inch season uni
-        $player_season = Players::find(1)->seasons;
+        $player_season = Player::find(1)->seasons;
         foreach($player_season as $pls){
             dump($pls->season);
         }
-
         //erb acnvel xaxacoxy
-        echo Players::find(1)->birthday.'<br>';
+        echo Player::find(1)->birthday.'<br>';
 
         //qani tarekana xaxacoxy
-        echo \Carbon\Carbon::parse(Players::find(1)->birthday)->diffInYears(date_create('now')).'<br>';;//diffForHumans(date_create('now'));
+        echo \Carbon\Carbon::parse(Player::find(1)->birthday)->diffInYears(date_create('now')).'<br>';;//diffForHumans(date_create('now'));
 
         //xaxacoxy inch timica
-        echo Players::find(1)->teams->hy_team.'<br>';;
+        echo Player::find(1)->teams->hy_team.'<br>';;
 
         //xaxacoxi statusy
-        echo Players::find(1)->statuses->hy_status.'<br>';
+        echo Player::find(1)->statuses->hy_status.'<br>';
 
         //xaxacoxi position
-        echo Players::find(1)->positions->hy_position.'<br>';
+        echo Player::find(1)->positions->hy_position.'<br>';
 //////////
 
 //////////
@@ -79,7 +79,7 @@ class TestController extends Controller
         echo Persons::find(1)->hy_name.'<br>';
 
         //vor paersony inch nationality uni
-        $person_nationality = Persons::find(1)->nationalities;
+        $person_nationality = Persons::find(1)->nationality;
         foreach($person_nationality as $pn){
             dump($pn->hy_nationality);
         }
@@ -115,21 +115,21 @@ class TestController extends Controller
 
     public function item_test(){
         //stanal voreve categoria
-        dump(Categories::find(1)->hy_category);
+        dump(Category::find(1)->hy_category);
 
         //stanal voreve format
         dump(Formats::find(1)->ru_format);
 
         //stanal voreve item
-        dump(items::find(1)->get());
+        dump(item::find(1)->get());
 
         //stanal voreve formati itemnery
         dump(Formats::find(1)->items()->get());
 
         //stanal voreve categoriayi itemnery
-        dump(Categories::find(1)->items()->get());
+        dump(Category::find(1)->items()->get());
 
         //stanal voreve itemi categorianery
-        dump(Items::find(1)->categories()->get());
+        dump(Item::find(1)->categories()->get());
     }
 }

@@ -11,7 +11,7 @@ class Teams extends Model
     protected $fillable = ['hy_team', 'ru_team', 'en_team'];
     public $timestamps = false;
 
-    public function players(){
-        return $this->belongsTo('App\Players', 'id', 'team_id');
+    public function player(){
+        return $this->belongsTo('App\Player', 'id', 'team_id');
     }
 }
