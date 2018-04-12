@@ -7,7 +7,7 @@ use App\Persons;
 use App\Person_nationality;
 use App\Players;
 
-class Nationalities extends Model
+class Nationality extends Model
 {
     protected $table = 'nationalities';
     protected $primaryKey = 'id';
@@ -18,8 +18,8 @@ class Nationalities extends Model
         return $this->belongsToMany('App\Persons', 'person_nationality', 'nationality_id', 'person_id');
     }
 
-    public function players(){
-        return $this->belongsToMany('App\Players', 'player_nationality', 'nationality_id', 'player_id');
+    public function player(){
+        return $this->belongsToMany('App\Player', 'player_nationality', 'nationality_id', 'player_id');
     }
 
 

@@ -11,6 +11,9 @@ use App\Statuses;
 use App\Teams;
 use App\Persons;
 use App;
+use App\Categories;
+use App\Formats;
+use App\Items;
 
 class TestController extends Controller
 {
@@ -108,5 +111,25 @@ class TestController extends Controller
         //stanal voreve team
         echo Teams::find(1)->ru_team.'<br>';
 
+    }
+
+    public function item_test(){
+        //stanal voreve categoria
+        dump(Categories::find(1)->hy_category);
+
+        //stanal voreve format
+        dump(Formats::find(1)->ru_format);
+
+        //stanal voreve item
+        dump(items::find(1)->get());
+
+        //stanal voreve formati itemnery
+        dump(Formats::find(1)->items()->get());
+
+        //stanal voreve categoriayi itemnery
+        dump(Categories::find(1)->items()->get());
+
+        //stanal voreve itemi categorianery
+        dump(Items::find(1)->categories()->get());
     }
 }

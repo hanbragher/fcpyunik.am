@@ -7,7 +7,7 @@ use App\Teams;
 use App\Statuses;
 use App\Positions;
 
-class Players extends Model
+class Player extends Model
 {
     protected $table = 'players';
     protected $primaryKey = 'id';
@@ -26,8 +26,8 @@ class Players extends Model
         return $this->hasOne('App\Positions', 'id', 'position_id');
     }
 
-    public function nationalities(){
-        return $this->belongsToMany('App\Nationalities', 'player_nationality', 'player_id', 'nationality_id');
+    public function nationality(){
+        return $this->belongsToMany('App\Nationality', 'player_nationality', 'player_id', 'nationality_id');
     }
 
     public function seasons(){
