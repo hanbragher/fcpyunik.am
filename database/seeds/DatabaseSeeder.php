@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        /*DB::table('positions')->insert(
+        DB::table('positions')->insert(
             [
                 'hy_position' => 'Պաշտպան',
                 'ru_position' => 'Защитник',
@@ -83,7 +83,6 @@ class DatabaseSeeder extends Seeder
                 'person_id' => 1,
                 'nationality_id' => 1,
             ]);
-*/
 
         DB::table('categories')->insert(
             [

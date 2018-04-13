@@ -15,7 +15,7 @@ class Nationality extends Model
     public $timestamps = false;
 
     public function persons(){
-        return $this->belongsToMany('App\Persons', 'person_nationality', 'nationality_id', 'person_id');
+        return $this->belongsToMany('App\Person', 'person_nationality', 'nationality_id', 'person_id');
     }
 
     public function player(){

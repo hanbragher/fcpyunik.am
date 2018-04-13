@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Positions;
 use App\Nationalities;
 
-class Persons extends Model
+class Person extends Model
 {
     protected $table = 'persons';
     protected $primaryKey = 'id';

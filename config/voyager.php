@@ -155,6 +155,8 @@ return [
         ],
 
         'widgets' => [
+            'App\\Widgets\\PlayersDimmer',
+            'App\\Widgets\\ItemsDimmer',
 
         ],
 

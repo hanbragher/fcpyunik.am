@@ -20,14 +20,16 @@
 /*Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');*/
+
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+
 /*Route::group(['prefix'=>'{location?}'], function (){
 
-    Route::get('/', ['as'=>'test', 'uses'=>'TestController@test']);
-    //Route::get('/', ['as'=>'test', 'uses'=>'TestController@item_test']);
+    //Route::get('/', ['as'=>'test', 'uses'=>'TestController@test']);
+    Route::get('/', ['as'=>'test', 'uses'=>'TestController@item_test']);
 
 });*/
 

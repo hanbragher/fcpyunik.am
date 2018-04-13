@@ -9,7 +9,7 @@ use App\Positions;
 use App\Seasons;
 use App\Statuses;
 use App\Teams;
-use App\Persons;
+use App\Person;
 use App;
 use App\Category;
 use App\Formats;
@@ -76,26 +76,26 @@ class TestController extends Controller
 
 //////////
         //stanal personic informacia
-        echo Persons::find(1)->hy_name.'<br>';
+        echo Person::find(1)->hy_name.'<br>';
 
         //vor paersony inch nationality uni
-        $person_nationality = Persons::find(1)->nationality;
+        $person_nationality = Person::find(1)->nationality;
         foreach($person_nationality as $pn){
             dump($pn->hy_nationality);
         }
 
         //personi cnndyan tivy
-        echo Persons::find(1)->birthday.'<br>';
+        echo Person::find(1)->birthday.'<br>';
 
         //qani tarekana persony
-        echo \Carbon\Carbon::parse(Persons::find(1)->birthday)->diffInYears(date_create('now')).'<br>';
+        echo \Carbon\Carbon::parse(Person::find(1)->birthday)->diffInYears(date_create('now')).'<br>';
         //diffForHumans(date_create('now'));
 
         //persony inch timica
-        echo Persons::find(1)->teams->hy_team.'<br>';;
+        echo Person::find(1)->teams->hy_team.'<br>';;
 
         //personi position
-        echo Persons::find(1)->positions->hy_position.'<br>';
+        echo Person::find(1)->positions->hy_position.'<br>';
 
 //////////
 
@@ -131,5 +131,7 @@ class TestController extends Controller
 
         //stanal voreve itemi categorianery
         dump(Item::find(1)->categories()->get());
+
+
     }
 }
