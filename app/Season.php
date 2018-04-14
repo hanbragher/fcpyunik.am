@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Seasons extends Model
+class Season extends Model
 {
     protected $table = 'seasons';
     protected $primaryKey = 'id';

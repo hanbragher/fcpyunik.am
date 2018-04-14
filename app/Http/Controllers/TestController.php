@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Nationality;
 use App\Player;
 use App\Positions;
-use App\Seasons;
+use App\Season;
 use App\Statuses;
 use App\Teams;
 use App\Person;
@@ -25,7 +25,7 @@ class TestController extends Controller
         echo Nationality::find(1)->hy_nationality.'<br>';
 
         //vor seasozy inch xaxacoxner uni
-        $season_player = Seasons::find(1)->player;
+        $season_player = Season::find(1)->player;
         foreach($season_player as $spl){
             dump($spl->hy_name);
         }
@@ -103,7 +103,7 @@ class TestController extends Controller
         echo Positions::find(1)->ru_position.'<br>';
 
         //stanal voreve season
-        echo Seasons::find(1)->season.'<br>';
+        echo Season::find(1)->season.'<br>';
 
         //stanal voreve status
         echo Statuses::find(1)->hy_status.'<br>';

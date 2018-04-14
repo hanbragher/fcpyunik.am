@@ -28,8 +28,8 @@ Route::group(['prefix' => 'admin'], function () {
 
 /*Route::group(['prefix'=>'{location?}'], function (){
 
-    //Route::get('/', ['as'=>'test', 'uses'=>'TestController@test']);
-    Route::get('/', ['as'=>'test', 'uses'=>'TestController@item_test']);
+    Route::get('/', ['as'=>'test', 'uses'=>'TestController@test']);
+    //Route::get('/', ['as'=>'test', 'uses'=>'TestController@item_test']);
 
 });*/
 

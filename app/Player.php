@@ -31,6 +31,6 @@ class Player extends Model
     }
 
     public function seasons(){
-        return $this->belongsToMany('App\Seasons', 'player_season', 'player_id', 'season_id');
+        return $this->belongsToMany('App\Season', 'player_season', 'player_id', 'season_id');
     }
 }
